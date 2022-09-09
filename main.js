@@ -249,6 +249,13 @@ function update(){
         spaceshipX = canvas.width-64;
     }//우주선의 좌표값이 무한대로 업데이트 되는게 아닌, 경기장 안에서만 있게 하기
     
+    if(spaceshipY <= 0){
+        spaceshipY = 0
+    }
+    if(spaceshipY >= canvas.height-64){
+        spaceshipY = canvas. height-64;
+    }
+    
     
     for (let i = 0; i < bulletList.length; i++) {
         if (bulletList[i].alive) {
