@@ -211,7 +211,7 @@ function creatBossEnemy(){
      let bossenemy = new BossEnemy();//적군 생성(new생성자로 공장에서 물건 찍어내듯이 생성가능)
       bossenemy.init(); //적군 좌표 셋팅
 
- },2000)//setInterval(호출하고 싶은 함수,시간)  내가  원하는 시간 내가 원한는 함수 호출
+ },5000)//setInterval(호출하고 싶은 함수,시간)  내가  원하는 시간 내가 원한는 함수 호출
 
 
 }
@@ -253,7 +253,7 @@ function update(){
         spaceshipY = 0
     }
     if(spaceshipY >= canvas.height){
-        spaceshipY = canvas. height+64;
+        spaceshipY = canvas. height-64;
     }
     
     
