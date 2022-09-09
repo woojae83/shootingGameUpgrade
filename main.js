@@ -234,6 +234,17 @@ function update(){
         spaceshipX -= 5;
  
     }
+    if( 38 in keysDown){
+        spaceshipY -= 5;
+ 
+    }
+    if( 38 in keysDown){
+        spaceshipY -= 5;
+ 
+    }if( 40 in keysDown){
+        spaceshipY += 5;
+ 
+    }
    
     if(spaceshipX <= 0){
         spaceshipX = 0
