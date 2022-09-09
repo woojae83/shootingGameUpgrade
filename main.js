@@ -114,14 +114,14 @@ function BossEnemy(){
     this.x = 0; //this는 Enemy 자신의미
     this.y = 0;
     this.init=function(){
-        this.x = generateRandomValue(0,canvas.width-80);
+        this.x = generateRandomValue(0,canvas.width-110);
         this.y = 0;
 
         bossEnemyList.push(this)//에너미를 리스트에 집어 넣느다
     };
     this.update = function(){
         this.y += 2;
-        if(this.y >= canvas.height - 120){
+        if(this.y >= canvas.height - 110){
             gameOver = true;
             
         }
