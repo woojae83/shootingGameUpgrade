@@ -227,13 +227,13 @@ function creatBossEnemy(){
 //방향키의 좌표의 값 증가 감소 시킴, 우주선이 캔버스 밖으로 못나가게 함,
 //살아있는 총알만 계속 나가게 함
 function update(){
-   // if( 39 in keysDown){
-    //    spaceshipX += 5;
-    //}
-    //if( 37 in keysDown){
-     //   spaceshipX -= 5;
+    if( 39 in keysDown){
+        spaceshipX += 5;
+    }
+    if( 37 in keysDown){
+        spaceshipX -= 5;
  
-   //}
+   }
     if( 38 in keysDown){
         spaceshipY -= 5;
   
