@@ -252,8 +252,8 @@ function update(){
     if(spaceshipY <= 0){
         spaceshipY = 0
     }
-    if(spaceshipY >= canvas.height){
-        spaceshipY = canvas. height-64;
+    if(spaceshipY >= canvas.height-64){
+        spaceshipY = canvas.height-64;
     }
     
     
