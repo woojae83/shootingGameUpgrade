@@ -167,7 +167,7 @@ function loadImge(){
     explosionImage.src = "explosion.png"; 
     
     bossmonsterImage = new Image();
-    bossmonsterImage.src = "bossmonster1.png";
+    bossmonsterImage.src = "bossmonster.png";
 }
 
 let keysDown = {};//방향키 담아두는 곳
