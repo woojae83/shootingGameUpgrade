@@ -70,7 +70,7 @@
 ![image](https://user-images.githubusercontent.com/108383150/195058765-897aab78-3e42-4266-8615-27e2ad6654a1.png)
 
 
-•  Bullet 함수를 class함수 형식과 같게 만듦(아직 클래스에 대한 이해 부족)
+•  Bullet 함수를 class함수 형식과 같게 만듦
 
 •  미사일의 좌표값을 넣을 미사일 리스트를 bulletList설정
 
@@ -95,3 +95,22 @@
   - 미사일이 캔버스 맨 위쪽에 도달해도 리스트에서 사라지지 않아, 미사일 리스트에 계속 남아 있어서 게임이 느려짐.
 
   - 미사일이 리스트에서 제거 되게 함으로써 문제 해결
+
+
+적군 생성,게임오버 생성
+![image](https://user-images.githubusercontent.com/108383150/195059112-d99e4dff-95c8-4650-b654-c6dfd09aa514.png)
+
+• generateRandomValue(min,max)에서 랜덤하게 적군을 생성하게 하는 함수 만듦
+
+  - Math.floor(Math.random ...)로 적군몬스터를 맨 캔버스 맨 위쪽 상단에서 랜덤하게 생성
+
+• Enemy 함수 에서 적군의 x,y값을 0으로 선언 및 값을 초기화 하고 this.init로 처음 위치를 
+
+캔버스의 맨 위쪽 어디서든 생성되게 하는 함수 만듦
+
+  - enumyList에서 적군몬스터 좌표값 넣음
+
+• this.update 에서 적군몬스터가 생성될때  this.y 좌표값에서 +2만큼(아래쪽 으로) 움직이게 하는 함수 만듦
+
+  - if문으로 적군 몬스터가 캔버스 맨 아래쪽에 닿았을 때 게임오버가 됨(gameOver = true)
+
