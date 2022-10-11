@@ -157,7 +157,7 @@
   - setInterval로 0.5초 마다 적군이 생성되게 함
 
 움직임 처리
-![image](https://user-images.githubusercontent.com/108383150/195060100-f6cc9f54-1292-45b5-9c75-77b272531e5f.png)
+![image](https://user-images.githubusercontent.com/108383150/195060570-255a0a46-02e9-408d-bd9b-e659d96cf579.png)
 
 • update에서 방향키 좌표값을 증가 감소, 우주선을 캔버스 밖으로 나가지 못하게 하거나, 살아있는  미사일만 나가게 하게함
 
@@ -182,5 +182,38 @@
        - checkUpline() 미사일이 캔버스 맨 위쪽에 닿았을때 사라짐   
 
   - for(...enemyList...)  .update 반복해서 적군몬스터가 아래로 +2만큼 내려오고, 캔버스 마지막에 닿으면 게임오버 되게함
+
+
+이미지 생성
+![image](https://user-images.githubusercontent.com/108383150/195060871-5ddb2be7-3180-4fbb-a3a0-26e52bc7dd02.png)
+
+• render()에서 각종 이미지를 생성하게 함
+
+   - ctx.drawImage로 이미지들을 생성
+
+   - ctx.fillText로 점수판 생성(.fillStyle 하얀색, .font 25px serif)
+
+   - for(.. bulletList..) 미사일이 살아 있으면 미사일 이미지를 캔버스에 그려 줌
+
+   - for(..enemyList..) 몬스터리스트의 길이 만큼(생성되는만큼) 이미지를 캔버스에 그려줌
+
+메인 , 각 함수 사용 
+![image](https://user-images.githubusercontent.com/108383150/195061202-7e086b9e-bdf0-401a-b79d-da1e566ccdb1.png)
+
+• main에서 update(), render()를 하고, requestAnimationFrame(main)으로 계속해서 화면에 이미지들이 보이게 해서 움직이는 것처럼 보이게 함
+
+  - if(!gameOver)는 게임오버가 아니면 즉, 적군몬스터가 캔버스 맨 아래에 닿지 않았을때는 계속 게임이 진행하게 함
+
+  - else는 적군몬스터가 캔버스 맨 아래에 닿으면 게임오버 화면 보여줌
+
+ 
+
+• loadImge()이미지를 불러오고, setupkeyboardListener()키보드를 작동하게하고, creatEnemy() 적군몬스터를 불러고오고
+
+  main() 메인 함수를 불러오게 함 ->게임이 실제 진행 되게 함
+
+ 
+
+
  
 
