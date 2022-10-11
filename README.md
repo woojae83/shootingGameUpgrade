@@ -51,6 +51,7 @@
 • 게임오버 화면에 사용할 변수 선언 및 값 입력
 
 
+
 값 세팅
 ![image](https://user-images.githubusercontent.com/108383150/195058486-bc41e493-8ec1-4c3b-8550-795bbeb82e1f.png)
 
@@ -63,6 +64,7 @@
 •  HTML body(부모노드)에 canvas(자식노드) 추가
 
 •  내 캐릭터인 우주선 좌표값을 캔버스 맨아래 가운데 위치하도록 설정
+
 
 
 
@@ -97,6 +99,7 @@
   - 미사일이 리스트에서 제거 되게 함으로써 문제 해결
 
 
+
 적군 생성,게임오버 생성
 ![image](https://user-images.githubusercontent.com/108383150/195059112-d99e4dff-95c8-4650-b654-c6dfd09aa514.png)
 
@@ -113,4 +116,71 @@
 • this.update 에서 적군몬스터가 생성될때  this.y 좌표값에서 +2만큼(아래쪽 으로) 움직이게 하는 함수 만듦
 
   - if문으로 적군 몬스터가 캔버스 맨 아래쪽에 닿았을 때 게임오버가 됨(gameOver = true)
+
+
+
+이미지 생성 
+![image](https://user-images.githubusercontent.com/108383150/195059625-9b156724-febc-46f4-b487-99ae9cda7b62.png)
+
+
+• 백그라운드 이미지, 적군, 우주선 이미지 등을 생성하는 함수 
+
+  - new Imge()로 각 이미지 객체가 생성되어 속성들을 추가할 수 있게함
+
+  - 각 이미지(.jpg등)들을 이미지 태그 src 속성에 넣어줌   
+
+
+방향키 생성
+![image](https://user-images.githubusercontent.com/108383150/195059721-bf3516be-93c5-47f3-9588-15e0d9ebb31f.png)
+• keysDown 에 방향키를 담아두는 리스트 만듦
+
+•setupkeyboardListener에 방향키 함수 설정
+
+  - addEventListener로 keydown 키를 눌렀을때 이벤트가 발생하게 함
+
+  - keyup으로 방향키를 눌렀다 땔 때 눌렀던 방향키를 방향키 리스트에서 삭제 함
+
+  - if문으로 스페이스바(32)키 눌렀을때  미사일 생성 
+
+
+총알생성, 적군몬스터 생성
+![image](https://user-images.githubusercontent.com/108383150/195059909-fa250c75-9651-4b19-b997-bc162dbe65a6.png)
+
+ • creatBullet에서 new Bullet() 해줌으로써 총알을 생성(슈팅게임 클론코딩1의 Bullet함수)
+
+  - bul.init()로 총알 좌표를 세팅
+
+• creatEnemy에서  new Enemy()해줌으로써 적군을 생성(슈팅게임 클론코딩1의 Enemyt함수)
+
+  - enemy.init()로 적군 좌표를 세팅
+
+  - setInterval로 0.5초 마다 적군이 생성되게 함
+
+움직임 처리
+![image](https://user-images.githubusercontent.com/108383150/195060100-f6cc9f54-1292-45b5-9c75-77b272531e5f.png)
+
+• update에서 방향키 좌표값을 증가 감소, 우주선을 캔버스 밖으로 나가지 못하게 하거나, 살아있는  미사일만 나가게 하게함
+
+   -  if( 39 in ..) keysDown에 39키가 입력되면(오른쪽 방향키를 누르면)  우주선의 x좌표를 5씩(오른쪽)으로 증가(움직임)
+
+   -  if( 37 in ..) keysDown에 37키가 입력되면(왼쪽 방향키를 누르면)  우주선의 x좌표를 5씩(왼쪽)으로 감소(움직임)
+
+   -  if( spaceshipX <= 0) 우주선 좌표가 캔버스의 맨 왼쪽 좌표와 만나면 더이상 우주선이 가지 못하게 함
+
+   -  if( spaceshipY >= canvas.width-64) 우주선 좌표가 캔버스의 맨 오른쪽 좌표와 만나면 더이상 우주선이 가지 못하게 함
+
+        - canvas.width-64에서 canvas.width는 캔버스의 넓이, 64는 우주선의 픽셀(캔버스의 넓이에서 우주선의 크기를 빼주
+
+          캔버스와 우주선이 만나는 지점이 되고 우주선의 위치가 더이상 늘어날수 없게 됨. 가지못하게 됨)
+
+   - for(... bulletList.length...) if 는 미사일(코드에서 총알)이 살아있는 미사일 일 때 미사일 좌표가 .update() 업데이트(미사
+
+     일이 날아감) 되고, 
+
+       - checkHit() 미사일이 적군몬스터에 맞았을때 체크 되고,(우주선 사라지고, 점수 올라감)
+
+       - checkUpline() 미사일이 캔버스 맨 위쪽에 닿았을때 사라짐   
+
+  - for(...enemyList...)  .update 반복해서 적군몬스터가 아래로 +2만큼 내려오고, 캔버스 마지막에 닿으면 게임오버 되게함
+ 
 
