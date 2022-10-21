@@ -100,6 +100,8 @@ function Bullet() {
 
 }
 
+console.log(checkUpline)
+
 function generateRandomValue(min,max){//적군 랜덤하게 생성
     const randomEnumy = Math.floor(Math.random()*(max-min+1))+min
     return randomEnumy
